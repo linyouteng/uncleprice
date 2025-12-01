@@ -9,7 +9,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>自然大叔｜家電清洗服務價目表</title>
+  <title>自然大叔｜家電清洗價目與線上預約</title>
 
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dijzndzw2/image/upload/v1757173258/logo-3_jznrtv.png" />
 
@@ -92,7 +92,87 @@
     }
     h1{ margin:0; font-size:1.6rem; }
 
+    /* 價目＋預約頁首區塊 */
+    .price-header h1{
+      margin-bottom:8px;
+    }
+    .subtitle{
+      margin:8px auto 0;
+      max-width:900px;
+      font-size:.95rem;
+      line-height:1.4;
+      opacity:.9;
+    }
+    .cta-wrap{
+      margin-top:12px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
+    .cta-wrap .hint{
+      font-size:.85rem;
+      opacity:.85;
+    }
+    @media (min-width:720px){
+      .cta-wrap{
+        flex-direction:row;
+        justify-content:center;
+      }
+      .cta-wrap .hint{
+        margin-left:12px;
+      }
+    }
+
+    /* 快速導覽區 */
+    .quick-nav{
+      margin:16px auto 0;
+      max-width:900px;
+    }
+    .quick-nav ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .quick-nav li{
+      margin:0;
+    }
+    .quick-nav a{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--divider);
+      font-size:13px;
+      text-decoration:none;
+      color:var(--text-color);
+      background:rgba(255,255,255,.08);
+    }
+    body.dark .quick-nav a{
+      background:rgba(0,0,0,.18);
+    }
+
+    /* 預約步驟列表 */
+    .steps{
+      margin:8px 0 0;
+      padding-left:20px;
+    }
+    .steps li{
+      margin-bottom:4px;
+    }
+
+    /* 文字型連結（保持與周圍文字顏色一致） */
+    a.text-link{
+      color:inherit;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:2px;
+    }
+
     /* 主內容容器（限制寬度、置中） */
+
     main{
       max-width:900px;
       margin:20px auto;
@@ -257,7 +337,17 @@
   </style>
 </head>
 <body>
-  <header><h1>📌 自然大叔｜家電清洗服務價目表</h1></header>
+    <!-- TODO: 將本頁所有 "https://example.com/booking" 統一改成實際的線上預約表單網址 -->
+  <header class="price-header">
+    <h1 id="page-title">📌 自然大叔｜家電清洗價目與線上預約</h1>
+    <p class="subtitle">
+      先在下方確認大約價格，覺得可以就點「立即線上預約」按鈕填寫資料，我們會再與你確認時間與總價後才安排到府施工。
+    </p>
+    <div class="cta-wrap">
+      <a href="https://uncle-reservation-platform.netlify.app" class="btn btn-line">📝 立即線上預約</a>
+      <p class="hint">看完價目後隨時都可以回到這裡，再點這顆按鈕預約</p>
+    </div>
+  </header>
 
   <!--
     浮動可拖曳主題鍵（FAB）
@@ -265,6 +355,17 @@
     - 文字會在 JS 依主題切換「🌙 深色 / ☀️ 淺色」
   -->
   <button id="theme-fab" class="theme-fab" aria-label="切換深/淺色主題">🌙 深色</button>
+
+  <nav class="section-card quick-nav" aria-label="頁面快速導覽">
+    <ul>
+      <li><a href="#ac">冷氣清洗價目</a></li>
+      <li><a href="#pipe">水管清洗價目</a></li>
+      <li><a href="#others">其他家電服務</a></li>
+      <li><a href="#addons">選配項目</a></li>
+      <li><a href="#how-to-book">如何預約</a></li>
+      <li><a href="#faq">常見問題</a></li>
+    </ul>
+  </nav>
 
   <main>
     <!-- ========== 區塊：冷氣清洗 ========== -->
@@ -294,6 +395,17 @@
           </div>
         </li>
       </ul>
+    </section>
+
+    <!-- ========== 區塊：如何預約 ========== -->
+    <section class="section-card" aria-labelledby="how-to-book">
+      <h2 id="how-to-book">🧭 如何預約？</h2>
+      <ol class="steps">
+        <li>先在冷氣、直立式洗衣機等價目表中，大致確認你家需要的服務項目與台數。</li>
+        <li>點任一處的「立即線上預約」按鈕，進入預約表單。</li>
+        <li>在表單填寫聯絡方式、服務地址、預計清洗項目與可預約時間（例如：冷氣 2 台＋直立式洗衣機 1 台）。</li>
+        <li>送出後，我們會再與你確認實際總價與可預約時間，確認後才會安排到府施工。</li>
+      </ol>
     </section>
 
     <!-- ========== 區塊：水管清洗 ========== -->
@@ -352,11 +464,58 @@
       </ul>
     </section>
 
+    <!-- ========== 區塊：常見問題 ========== -->
+    <section class="section-card" aria-labelledby="faq">
+      <h2 id="faq">❓ 常見問題（填表前可以先看）</h2>
+
+      <details>
+        <summary>預約後，現場價格還會再變動嗎？</summary>
+        <p>我們會先依你在預約表單填寫的項目預估金額在清洗前一日給予『報價單』確認，若到府後發現與描述不同，會在施工前先說明差異與新的金額，你同意才會開始施工。</p>
+      </details>
+
+      <details>
+        <summary>清洗一台冷氣、直立式洗衣機、水塔、自來水管，大約需要多久時間？</summary>
+        <p>一般家庭的分離式冷氣每台約 40～1 小時、直立式洗衣機每台約 1.5 小時起、水塔每顆約 40 分鐘、自來水管清洗則會依坪數與迴路數不同約為 2～4 小時不等，實際時間會在預約確認時一併說明。</p>
+      </details>
+
+      <details>
+        <summary>需要先準備什麼嗎？家裡會不會弄得很髒？</summary>
+        <p>建議先簡單移開冷氣下方與主要動線的物品。施工前會以養生膠帶保護與接水裝置，完工後也會協助簡單整理，盡量將影響降到最低。</p>
+      </details>
+
+      <details>
+        <summary>可以用哪些方式付款？如果需要發票怎麼辦？</summary>
+        <p>目前支援現金與銀行轉帳，如需開立發票或收據，可以在預約表單的備註欄註明，我們會依需求提供。</p>
+      </details>
+
+      <details>
+        <summary>服務範圍與車馬費怎麼計算？</summary>
+        <p>我們不會另外加收車馬費。若當次清洗數量較少，因成本考量，會與同區域其他客戶併單安排於同一服務日，時間上可能需要較多等待，也請您配合我們的排程調整。</p>
+<p>另外，若是單獨預約清洗「直立式洗衣機」，現場如因機器老舊、安裝環境或其他因素導致無法拆機清洗，則將會酌收車馬費，敬請見諒與理解。</p>
+      </details>
+
+      <details>
+        <summary>臨時要改期或取消預約怎麼辦？</summary>
+        <p>若需改期或取消，建議盡早告知，我們會協助調整行程。若遇到天候或設備等無法預期的狀況無法施工，也會主動聯繫與你協調改期。</p>
+      </details>
+
+      <p class="meta" style="margin-top:8px;">
+        其他沒在上面出現的問題，也可以在預約表單的備註欄寫下，或另行透過 LINE 與我們聯繫。
+      </p>
+    </section>
+
     <!-- 桌機版 CTA（置於內容區中段；行動版會隱藏） -->
-    <div class="cta-desktop" aria-label="聯絡行動">
-      <div class="meta" style="opacity:.85; margin-bottom:6px;">馬上預約，三台以上現省 $900</div>
-      <a href="https://lin.ee/OHk6Rn7" class="btn btn-line">📱 LINE 預約</a>
-      <a href="tel:0912356331" class="btn btn-call">📞 立即來電</a>
+    <div class="cta-desktop" aria-label="線上預約">
+      <div class="meta" style="opacity:.9; margin-bottom:8px;">
+        覺得價格可以嗎？三台以上團購約可現省 <span class="price">$900</span>，可以直接線上預約。
+      </div>
+      <a href="https://uncle-reservation-platform.netlify.app" class="btn btn-line">📝 立即線上預約</a>
+      <div class="meta" style="margin-top:6px;">
+        若有特殊狀況或不確定要選哪些項目，也可以
+        <a href="https://lin.ee/OHk6Rn7" class="text-link">用 LINE 詢問</a>
+        或撥打
+        <a href="tel:0912356331" class="text-link">0912-356-331</a>。
+      </div>
     </div>
   </main>
 
@@ -365,11 +524,14 @@
     - 第一列：品牌綠訊息條（內有 ⭐ 圖示）
     - 第二列：兩顆主動作按鈕
   -->
-  <div class="mobile-cta" role="region" aria-label="快速聯絡">
+  <div class="mobile-cta" role="region" aria-label="線上預約與聯絡方式">
     <div class="wrap">
-      <div class="msg"><span class="icon">⭐</span> 馬上預約，三台以上現省 $900</div>
-      <a href="https://lin.ee/OHk6Rn7" class="btn btn-line">📱 LINE 預約</a>
-      <a href="tel:0912356331" class="btn btn-call">📞 立即來電</a>
+      <div class="msg">
+        <span class="icon">⭐</span>
+        價格可以就直接線上預約，三台以上現省 $900
+      </div>
+      <a href="https://example.com/booking" class="btn btn-line">📝 線上預約</a>
+      <a href="https://lin.ee/OHk6Rn7" class="btn btn-call">💬 LINE 詢問</a>
     </div>
   </div>
 
