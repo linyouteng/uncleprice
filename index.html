@@ -334,7 +334,31 @@
     @media (max-width:400px){
       .mobile-cta .btn{ font-size:14.5px; } /* 超小螢幕字級再小些 */
     }
-  </style>
+  
+    /* FAQ 樣式調整：讓題目與回答更好辨識 */
+    details{
+      margin:0.5rem 0 0.9rem;
+    }
+    details summary{
+      font-weight:700;                /* 題目加粗 */
+      font-size:1.05rem;              /* 題目稍微放大 */
+      line-height:1.6;
+      cursor:pointer;
+      color:var(--section-title);     /* 題目用章節標題顏色（綠色系） */
+    }
+    details[open] summary{
+      text-decoration:underline;      /* 展開時加底線，提示目前開啟中 */
+      text-underline-offset:2px;
+    }
+    details > p,
+    details > div{
+      margin-top:0.35rem;             /* 回答與題目拉出距離 */
+      font-size:0.95rem;              /* 回答比題目稍微小一點 */
+      line-height:1.7;
+      color:var(--text-color);        /* 回答維持主要文字色 */
+      opacity:0.9;                    /* 稍微柔和一點，凸顯題目 */
+    }
+</style>
 </head>
 <body>
     <!-- TODO: 將本頁所有 "https://example.com/booking" 統一改成實際的線上預約表單網址 -->
