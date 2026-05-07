@@ -358,6 +358,195 @@
       color:var(--text-color);        /* 回答維持主要文字色 */
       opacity:0.9;                    /* 稍微柔和一點，凸顯題目 */
     }
+
+    /* =========================================================
+       11) 即時計價估算器
+       - 使用數量加減與勾選項目，即時計算預估總價與優惠
+       ========================================================= */
+    .calculator-card{
+      background:linear-gradient(180deg, rgba(64,145,108,.10), rgba(64,145,108,.03)), var(--card-bg);
+    }
+    .calc-intro{
+      margin:0 0 14px;
+      font-size:.95rem;
+      opacity:.9;
+    }
+    .calc-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:1fr;
+    }
+    @media (min-width:720px){
+      .calc-grid{ grid-template-columns:repeat(2,1fr); }
+    }
+    .calc-item{
+      border:1px solid var(--divider);
+      border-radius:12px;
+      padding:12px;
+      background:rgba(255,255,255,.5);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    body.dark .calc-item{ background:rgba(0,0,0,.16); }
+    .calc-item-head{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .calc-item-title{ font-weight:800; line-height:1.4; }
+    .calc-item-price{ color:var(--price-color); font-weight:900; white-space:nowrap; }
+    .qty-control{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .qty-control button{
+      width:38px;
+      height:38px;
+      border:1px solid var(--divider);
+      border-radius:10px;
+      background:var(--card-bg);
+      color:var(--text-color);
+      font-size:20px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 1px 4px rgba(0,0,0,.06);
+    }
+    .qty-control button:active{ transform:translateY(1px); }
+    .qty-control input{
+      width:72px;
+      text-align:center;
+      border:1px solid var(--divider);
+      border-radius:10px;
+      padding:8px 6px;
+      font-size:16px;
+      font-weight:800;
+      background:var(--card-bg);
+      color:var(--text-color);
+    }
+    .calc-note{
+      font-size:12.5px;
+      opacity:.8;
+      line-height:1.5;
+    }
+    .calc-addons{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+      grid-template-columns:1fr;
+    }
+    @media (min-width:720px){
+      .calc-addons{ grid-template-columns:repeat(2,1fr); }
+    }
+    .calc-check{
+      border:1px solid var(--divider);
+      border-radius:12px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.35);
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      cursor:pointer;
+    }
+    body.dark .calc-check{ background:rgba(0,0,0,.12); }
+    .calc-check input{ margin-top:7px; transform:scale(1.15); }
+    .calc-summary{
+      margin-top:16px;
+      border:1px solid var(--divider);
+      border-radius:14px;
+      padding:14px;
+      background:var(--card-bg);
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+    }
+    .summary-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:5px 0;
+      border-bottom:1px dashed var(--divider);
+    }
+    .summary-row:last-child{ border-bottom:0; }
+    .summary-total{
+      font-size:1.25rem;
+      font-weight:900;
+      color:var(--price-color);
+    }
+    .calc-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:center;
+      margin-top:12px;
+    }
+    .calc-actions .btn{ margin:0; }
+    .copy-feedback{
+      text-align:center;
+      min-height:1.6em;
+      font-size:.9rem;
+      color:var(--section-title);
+      font-weight:700;
+      margin-top:8px;
+    }
+
+
+    /* =========================================================
+       12) 客戶評價與信任說明
+       - 用卡片呈現常見回饋重點，補足服務信任感
+       ========================================================= */
+    .reviews-card{
+      background:linear-gradient(180deg, rgba(255,232,204,.38), rgba(255,232,204,.08)), var(--card-bg);
+    }
+    .reviews-intro{
+      margin:0 0 14px;
+      font-size:.95rem;
+      opacity:.9;
+    }
+    .review-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:1fr;
+    }
+    @media (min-width:720px){
+      .review-grid{ grid-template-columns:repeat(3,1fr); }
+    }
+    .review-card{
+      border:1px solid var(--divider);
+      border-radius:14px;
+      padding:14px;
+      background:var(--card-bg);
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+    }
+    .review-stars{
+      color:#f5a400;
+      letter-spacing:1px;
+      font-size:15px;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+    .review-title{
+      font-weight:900;
+      color:var(--section-title);
+      margin-bottom:6px;
+    }
+    .review-text{
+      margin:0;
+      font-size:.92rem;
+      line-height:1.7;
+    }
+    .review-note{
+      margin-top:12px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px dashed var(--divider);
+      background:rgba(255,255,255,.38);
+      font-size:.9rem;
+      line-height:1.7;
+    }
+    body.dark .review-note{ background:rgba(0,0,0,.14); }
+
 </style>
 </head>
 <body>
@@ -383,9 +572,11 @@
   <nav class="section-card quick-nav" aria-label="頁面快速導覽">
     <ul>
       <li><a href="#ac">冷氣清洗價目</a></li>
+      <li><a href="#price-calculator">即時計價估算</a></li>
       <li><a href="#pipe">水管清洗價目</a></li>
       <li><a href="#others">其他家電服務</a></li>
       <li><a href="#addons">選配項目</a></li>
+      <li><a href="#reviews">客戶評價</a></li>
       <li><a href="#how-to-book">如何預約</a></li>
       <li><a href="#faq">常見問題</a></li>
     </ul>
@@ -420,6 +611,123 @@
         </li>
       </ul>
     </section>
+
+    <!-- ========== 區塊：即時計價估算器 ========== -->
+    <section class="section-card calculator-card" aria-labelledby="price-calculator">
+      <h2 id="price-calculator">🧮 即時計價估算器</h2>
+      <p class="calc-intro">
+        輸入預計清洗的數量，系統會即時估算金額。此為線上初估，實際金額仍會依現場機型、長度、環境與報價單確認後為準。
+      </p>
+
+      <div class="calc-grid" aria-label="主要服務數量">
+        <div class="calc-item">
+          <div class="calc-item-head">
+            <div>
+              <div class="calc-item-title">分離式冷氣</div>
+              <div class="calc-note">未滿 3 台每台 $1,800；3 台以上自動套用每台 $1,500。</div>
+            </div>
+            <div class="calc-item-price" id="split-ac-unit-price">$1,800</div>
+          </div>
+          <div class="qty-control" data-target="splitAc">
+            <button type="button" data-step="-1" aria-label="減少分離式冷氣數量">−</button>
+            <input id="splitAc" type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="分離式冷氣數量">
+            <button type="button" data-step="1" aria-label="增加分離式冷氣數量">＋</button>
+          </div>
+        </div>
+
+        <div class="calc-item">
+          <div class="calc-item-head">
+            <div>
+              <div class="calc-item-title">吊隱式冷氣</div>
+              <div class="calc-note">每台 $2,800。</div>
+            </div>
+            <div class="calc-item-price">$2,800</div>
+          </div>
+          <div class="qty-control" data-target="concealedAc">
+            <button type="button" data-step="-1" aria-label="減少吊隱式冷氣數量">−</button>
+            <input id="concealedAc" type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="吊隱式冷氣數量">
+            <button type="button" data-step="1" aria-label="增加吊隱式冷氣數量">＋</button>
+          </div>
+        </div>
+
+        <div class="calc-item">
+          <div class="calc-item-head">
+            <div>
+              <div class="calc-item-title">直立式洗衣機清洗</div>
+              <div class="calc-note">每台 $2,000；有清洗冷氣時，每台自動優惠 $200。</div>
+            </div>
+            <div class="calc-item-price" id="washer-unit-price">$2,000</div>
+          </div>
+          <div class="qty-control" data-target="washer">
+            <button type="button" data-step="-1" aria-label="減少直立式洗衣機數量">−</button>
+            <input id="washer" type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="直立式洗衣機數量">
+            <button type="button" data-step="1" aria-label="增加直立式洗衣機數量">＋</button>
+          </div>
+        </div>
+
+        <div class="calc-item">
+          <div class="calc-item-head">
+            <div>
+              <div class="calc-item-title">家用水塔清洗</div>
+              <div class="calc-note">每顆 $1,000；有清洗自來水管時，每顆自動優惠 $200。</div>
+            </div>
+            <div class="calc-item-price" id="tower-unit-price">$1,000</div>
+          </div>
+          <div class="qty-control" data-target="tower">
+            <button type="button" data-step="-1" aria-label="減少家用水塔數量">−</button>
+            <input id="tower" type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="家用水塔數量">
+            <button type="button" data-step="1" aria-label="增加家用水塔數量">＋</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-addons" aria-label="水管與選配項目">
+        <label class="calc-check">
+          <input id="pipeBasic" type="checkbox">
+          <span><strong>自來水管：無廚一衛</strong><br><span class="calc-note">套內基礎方案 $3,200。</span></span>
+        </label>
+        <label class="calc-check">
+          <input id="pipeStandard" type="checkbox">
+          <span><strong>自來水管：一廚一衛</strong><br><span class="calc-note">標準方案 $4,200。勾選後會停用無廚一衛，避免重複計算。</span></span>
+        </label>
+        <label class="calc-check">
+          <input id="antiMold" type="checkbox">
+          <span><strong>冷氣防黴處理</strong><br><span class="calc-note">依分離式＋吊隱式冷氣總台數計算；滿 5 台每台 $250，否則每台 $300。</span></span>
+        </label>
+        <label class="calc-check">
+          <input id="ozone" type="checkbox">
+          <span><strong>臭氧全面消毒</strong><br><span class="calc-note">每間房 $200，請在下方輸入房間數。</span></span>
+        </label>
+        <div class="calc-item" id="ozoneRoomsWrap" style="display:none;">
+          <div class="calc-item-head">
+            <div>
+              <div class="calc-item-title">臭氧消毒房間數</div>
+              <div class="calc-note">每間 $200。</div>
+            </div>
+            <div class="calc-item-price">$200</div>
+          </div>
+          <div class="qty-control" data-target="ozoneRooms">
+            <button type="button" data-step="-1" aria-label="減少臭氧消毒房間數">−</button>
+            <input id="ozoneRooms" type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="臭氧消毒房間數">
+            <button type="button" data-step="1" aria-label="增加臭氧消毒房間數">＋</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-summary" aria-live="polite">
+        <div class="summary-row"><span>原價小計</span><strong id="calc-subtotal">$0</strong></div>
+        <div class="summary-row"><span>自動優惠</span><strong id="calc-discount">-$0</strong></div>
+        <div class="summary-row"><span>預估總金額</span><strong class="summary-total" id="calc-total">$0</strong></div>
+        <div class="calc-note" id="calc-detail" style="margin-top:8px;">尚未選擇服務項目。</div>
+      </div>
+
+      <div class="calc-actions">
+        <a id="calculator-booking-link" href="https://uncle-reservation-platform.netlify.app?source=price_calculator" class="btn btn-line">📝 帶著估價去預約</a>
+        <button id="copy-estimate" type="button" class="btn btn-call">📋 複製估價內容</button>
+      </div>
+      <div id="copy-feedback" class="copy-feedback" aria-live="polite"></div>
+    </section>
+
 
     <!-- ========== 區塊：如何預約 ========== -->
     <section class="section-card" aria-labelledby="how-to-book">
@@ -486,6 +794,40 @@
           <div class="meta" style="margin-top:6px;">除臭、氧化污染物、抑菌防霉、空氣淨化</div>
         </li>
       </ul>
+    </section>
+
+
+
+    <!-- ========== 區塊：客戶評價與服務說明 ========== -->
+    <section class="section-card reviews-card" aria-labelledby="reviews">
+      <h2 id="reviews">⭐ 客戶評價與服務說明</h2>
+      <p class="reviews-intro">
+        清洗服務除了價格透明，也很重視現場保護、施工說明與完工後整理。以下整理客戶最常在意的服務重點，讓你預約前可以更安心。
+      </p>
+
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="review-stars" aria-label="五顆星評價">★★★★★</div>
+          <div class="review-title">報價清楚，不會現場亂加價</div>
+          <p class="review-text">預約後會依填寫項目先估價確認；若現場狀況與描述不同，也會先說明差異與金額，確認後才施工。</p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="五顆星評價">★★★★★</div>
+          <div class="review-title">施工前會保護環境</div>
+          <p class="review-text">清洗前會提醒移開物品，並使用接水、保護與簡單防護措施，盡量降低對家具、地板與動線的影響。</p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="五顆星評價">★★★★★</div>
+          <div class="review-title">清洗後差異更有感</div>
+          <p class="review-text">常見回饋包含冷氣異味降低、出風更順、洗衣機內槽污垢改善，完工後也會協助簡單整理現場。</p>
+        </article>
+      </div>
+
+      <div class="review-note">
+        <strong>說明：</strong>如果你有 Google 評論、LINE 回饋截圖或清洗前後照片，之後可以放在這個區塊中，會比單純文字更有信任感，也能提升預約轉換率。
+      </div>
     </section>
 
     <!-- ========== 區塊：常見問題 ========== -->
@@ -723,6 +1065,162 @@
       // 首次載入之後，保險校正一次（避免初始位置卡到 CTA）
       setTimeout(measureCta, 0);  // 先量 CTA 再校正
     })(themeFab);
+
+    /* =========================================================
+       D) 即時計價估算器
+       - 自動套用：分離式冷氣 3 台以上每台 $1,500
+       - 自動套用：有清洗冷氣時，直立式洗衣機每台折 $200
+       - 自動套用：有清洗水管時，家用水塔每顆折 $200
+       - 防黴處理依冷氣總台數計算，滿 5 台每台 $250
+       ========================================================= */
+    const calculatorState = {
+      splitAc: document.getElementById('splitAc'),
+      concealedAc: document.getElementById('concealedAc'),
+      washer: document.getElementById('washer'),
+      tower: document.getElementById('tower'),
+      ozoneRooms: document.getElementById('ozoneRooms'),
+      pipeBasic: document.getElementById('pipeBasic'),
+      pipeStandard: document.getElementById('pipeStandard'),
+      antiMold: document.getElementById('antiMold'),
+      ozone: document.getElementById('ozone'),
+      ozoneRoomsWrap: document.getElementById('ozoneRoomsWrap'),
+      subtotal: document.getElementById('calc-subtotal'),
+      discount: document.getElementById('calc-discount'),
+      total: document.getElementById('calc-total'),
+      detail: document.getElementById('calc-detail'),
+      splitAcUnitPrice: document.getElementById('split-ac-unit-price'),
+      washerUnitPrice: document.getElementById('washer-unit-price'),
+      towerUnitPrice: document.getElementById('tower-unit-price'),
+      bookingLink: document.getElementById('calculator-booking-link'),
+      copyBtn: document.getElementById('copy-estimate'),
+      copyFeedback: document.getElementById('copy-feedback')
+    };
+
+    function money(n){ return '$' + Number(n || 0).toLocaleString('zh-TW'); }
+    function qty(id){ return Math.max(0, Math.min(99, parseInt(calculatorState[id]?.value || '0', 10) || 0)); }
+    function setQty(id, value){ if(calculatorState[id]) calculatorState[id].value = Math.max(0, Math.min(99, value)); }
+
+    function buildEstimate(){
+      const splitAc = qty('splitAc');
+      const concealedAc = qty('concealedAc');
+      const washer = qty('washer');
+      const tower = qty('tower');
+      const ozoneRooms = calculatorState.ozone.checked ? qty('ozoneRooms') : 0;
+      const totalAc = splitAc + concealedAc;
+      const hasPipe = calculatorState.pipeBasic.checked || calculatorState.pipeStandard.checked;
+
+      const originalSplitAc = splitAc * 1800;
+      const splitAcUnit = splitAc >= 3 ? 1500 : 1800;
+      const splitAcFinal = splitAc * splitAcUnit;
+      const splitAcDiscount = originalSplitAc - splitAcFinal;
+
+      const concealedAcFinal = concealedAc * 2800;
+
+      const washerOriginal = washer * 2000;
+      const washerUnit = totalAc > 0 ? 1800 : 2000;
+      const washerFinal = washer * washerUnit;
+      const washerDiscount = washerOriginal - washerFinal;
+
+      const towerOriginal = tower * 1000;
+      const towerUnit = hasPipe ? 800 : 1000;
+      const towerFinal = tower * towerUnit;
+      const towerDiscount = towerOriginal - towerFinal;
+
+      const pipeOriginal = calculatorState.pipeStandard.checked ? 4200 : (calculatorState.pipeBasic.checked ? 3200 : 0);
+      const pipeFinal = pipeOriginal;
+
+      const antiMoldUnit = totalAc >= 5 ? 250 : 300;
+      const antiMoldOriginal = calculatorState.antiMold.checked ? totalAc * 300 : 0;
+      const antiMoldFinal = calculatorState.antiMold.checked ? totalAc * antiMoldUnit : 0;
+      const antiMoldDiscount = antiMoldOriginal - antiMoldFinal;
+
+      const ozoneOriginal = ozoneRooms * 200;
+      const ozoneFinal = ozoneOriginal;
+
+      const subtotal = originalSplitAc + concealedAcFinal + washerOriginal + towerOriginal + pipeOriginal + antiMoldOriginal + ozoneOriginal;
+      const totalDiscount = splitAcDiscount + washerDiscount + towerDiscount + antiMoldDiscount;
+      const total = splitAcFinal + concealedAcFinal + washerFinal + towerFinal + pipeFinal + antiMoldFinal + ozoneFinal;
+
+      const lines = [];
+      if(splitAc) lines.push(`分離式冷氣 ${splitAc} 台（每台 ${money(splitAcUnit)}）`);
+      if(concealedAc) lines.push(`吊隱式冷氣 ${concealedAc} 台`);
+      if(washer) lines.push(`直立式洗衣機 ${washer} 台（每台 ${money(washerUnit)}）`);
+      if(tower) lines.push(`家用水塔 ${tower} 顆（每顆 ${money(towerUnit)}）`);
+      if(calculatorState.pipeBasic.checked) lines.push('自來水管：無廚一衛');
+      if(calculatorState.pipeStandard.checked) lines.push('自來水管：一廚一衛');
+      if(calculatorState.antiMold.checked && totalAc > 0) lines.push(`冷氣防黴處理 ${totalAc} 台（每台 ${money(antiMoldUnit)}）`);
+      if(calculatorState.antiMold.checked && totalAc === 0) lines.push('冷氣防黴處理：請先輸入冷氣台數');
+      if(ozoneRooms) lines.push(`臭氧全面消毒 ${ozoneRooms} 間`);
+
+      return { subtotal, totalDiscount, total, lines, splitAcUnit, washerUnit, towerUnit };
+    }
+
+    function updateCalculator(){
+      if(!calculatorState.splitAc) return;
+
+      if(calculatorState.pipeBasic.checked && calculatorState.pipeStandard.checked){
+        calculatorState.pipeBasic.checked = false;
+      }
+      calculatorState.ozoneRoomsWrap.style.display = calculatorState.ozone.checked ? 'flex' : 'none';
+      if(calculatorState.ozone.checked && qty('ozoneRooms') === 0) setQty('ozoneRooms', 1);
+      if(!calculatorState.ozone.checked) setQty('ozoneRooms', 0);
+
+      const estimate = buildEstimate();
+      calculatorState.subtotal.textContent = money(estimate.subtotal);
+      calculatorState.discount.textContent = '-' + money(estimate.totalDiscount);
+      calculatorState.total.textContent = money(estimate.total);
+      calculatorState.splitAcUnitPrice.textContent = money(estimate.splitAcUnit);
+      calculatorState.washerUnitPrice.textContent = money(estimate.washerUnit);
+      calculatorState.towerUnitPrice.textContent = money(estimate.towerUnit);
+      calculatorState.detail.textContent = estimate.lines.length ? estimate.lines.join('、') : '尚未選擇服務項目。';
+
+      const note = encodeURIComponent(`預估總金額：${money(estimate.total)}｜${estimate.lines.join('、') || '尚未選擇服務項目'}`);
+      calculatorState.bookingLink.href = `https://uncle-reservation-platform.netlify.app?source=price_calculator&estimate=${note}`;
+    }
+
+    document.querySelectorAll('.qty-control button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const wrap = btn.closest('.qty-control');
+        const target = wrap?.dataset.target;
+        const step = parseInt(btn.dataset.step || '0', 10);
+        if(target) setQty(target, qty(target) + step);
+        updateCalculator();
+      });
+    });
+
+    ['splitAc','concealedAc','washer','tower','ozoneRooms'].forEach(id=>{
+      const input = calculatorState[id];
+      if(input){
+        input.addEventListener('input', ()=>{ setQty(id, qty(id)); updateCalculator(); });
+      }
+    });
+    ['pipeBasic','pipeStandard','antiMold','ozone'].forEach(id=>{
+      const input = calculatorState[id];
+      if(input) input.addEventListener('change', (event)=>{
+        if(id === 'pipeBasic' && event.target.checked) calculatorState.pipeStandard.checked = false;
+        if(id === 'pipeStandard' && event.target.checked) calculatorState.pipeBasic.checked = false;
+        updateCalculator();
+      });
+    });
+
+    if(calculatorState.copyBtn){
+      calculatorState.copyBtn.addEventListener('click', async ()=>{
+        const estimate = buildEstimate();
+        const text = `您好，我想預約家電清洗，以下是網站估算內容：
+${estimate.lines.length ? estimate.lines.map(x=>'・'+x).join('\\n') : '・尚未選擇服務項目'}
+預估總金額：${money(estimate.total)}
+備註：實際金額仍依現場機型、長度、環境與報價單確認。`;
+        try{
+          await navigator.clipboard.writeText(text);
+          calculatorState.copyFeedback.textContent = '已複製估價內容，可以貼到 LINE 或預約備註。';
+        }catch(e){
+          calculatorState.copyFeedback.textContent = '目前瀏覽器不支援自動複製，請手動複製估價明細。';
+        }
+      });
+    }
+
+    updateCalculator();
+
   </script>
 </body>
 </html>
