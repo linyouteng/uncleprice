@@ -1,0 +1,7 @@
+# 自然大叔價目表：舊 Netlify 網址永久轉址到正式網域
+# 保留原路徑，例如 / -> https://price.naturaluncle.com/
+[[redirects]]
+  from = "https://uncleprice.netlify.app/*"
+  to = "https://price.naturaluncle.com/:splat"
+  status = 301
+  force = true
